@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:ital@1&display=swap');
+
+body {
+    background-color: black;
+    color: white;
+    margin: 0;
+    padding: 0; /* Hapus padding yang mungkin default dari browser */
+    overflow: hidden; /* Menghilangkan scrollbar vertikal */
+    font-family: Arial, sans-serif; /* Jika font Pacifico tidak tersedia, gunakan alternatif */
+}
+
+.navbar {
+    background-color: #282828;
+    height: 60px;
+    /* z-index: 5; */
+    position: absolute;
+    width: 100%;
+}
+
+.utama {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    min-height: 100vh; /* Menggunakan min-height agar sesuai dengan konten yang lebih besar */
+    align-items: center; /* Menggeser konten ke tengah secara vertikal */
+    padding: 5%; /* Menambahkan margin keseluruhan .utama */
+}
+
+.flex-item {
+    /* width: 175px;
+    height: 175px; */
+    /* background-color: grey; */
+    margin: 10%;
+}
+
+#hello {
+    font-size: 50px;
+    margin: 0;
+    font-family: 'Pacifico', cursive; /* Menggunakan font Pacifico jika tersedia */
+}
+
+#nama {
+    font-size: 25px;
+    margin: 0;
+    /* margin: 100px; */
+    text-align: center;
+    font-family: poppins;
+}
+
+.lastplay {
+    color: white;
+}
