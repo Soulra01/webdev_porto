@@ -4,26 +4,48 @@ body {
     background-color: black;
     color: white;
     margin: 0;
-    padding: 0; /* Hapus padding yang mungkin default dari browser */
-    overflow: hidden; /* Menghilangkan scrollbar vertikal */
-    font-family: Arial, sans-serif; /* Jika font Pacifico tidak tersedia, gunakan alternatif */
+    padding: 0;
 }
 
-.navbar {
-    background-color: #282828;
-    height: 60px;
-    /* z-index: 5; */
-    position: absolute;
-    width: 100%;
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* padding: 20px; */
+    background-color: #000000;
+    color: white;
 }
+
+.menu {
+    list-style-type: none;
+    display: flex;
+}
+
+.menu li {
+    margin-right: 20px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s; /* Efek transisi warna teks saat hover */
+}
+
+/* Efek hover untuk tautan menu */
+.menu a:hover {
+    color: rgb(255, 208, 0);
+}
+
+
 
 .utama {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    min-height: 100vh; /* Menggunakan min-height agar sesuai dengan konten yang lebih besar */
+    min-height: 80vh; /* Menggunakan min-height agar sesuai dengan konten yang lebih besar */
     align-items: center; /* Menggeser konten ke tengah secara vertikal */
     padding: 5%; /* Menambahkan margin keseluruhan .utama */
+    padding-top: 0%;
 }
 
 .flex-item {
@@ -49,4 +71,51 @@ body {
 
 .lastplay {
     color: white;
+}
+
+@media (max-width: 1000px) {
+    body {
+        overflow: hidden;
+    }
+
+    .menu {
+        max-height: 0;
+        overflow: hidden;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: #000000;
+        width: 100%;
+        text-align: center;
+        transition: max-height 1s, opacity 1s; /* Efek transisi */
+        opacity: 0;
+        padding: 1%;
+    }
+
+    .menu.active {
+        max-height: 200px; /* Atur sesuai dengan tinggi menu sebenarnya */
+        opacity: 1;
+    }
+
+    .menu li {
+        margin: 10px 0;
+    }
+
+    .hamburger-menu {
+        display: block;
+        cursor: pointer;
+        margin: 10px;
+    }
+
+    .bar {
+        width: 25px;
+        height: 3px;
+        background-color: white;
+        margin: 4px 0;
+    }
+
+    .utama {
+        flex-direction: column-reverse; /* Mengubah flex direction */
+    }
 }
