@@ -40,23 +40,26 @@ nav {
 
 .utama {
     display: flex;
-    justify-content: space-between;
+    flex-direction: row;
     flex-wrap: wrap;
-    min-height: 80vh; /* Menggunakan min-height agar sesuai dengan konten yang lebih besar */
+    width: 100%;
+    /* min-height: 80vh; Menggunakan min-height agar sesuai dengan konten yang lebih besar */
     align-items: center; /* Menggeser konten ke tengah secara vertikal */
-    padding: 5%; /* Menambahkan margin keseluruhan .utama */
+    /* padding: 5%; Menambahkan margin keseluruhan .utama */
     padding-top: 0%;
 }
-
+.utama div{
+    padding: 3%;
+}
 .flex-item {
-    /* width: 175px;
-    height: 175px; */
+    /* width: 175px; */
+    /*height: 175px; */
     /* background-color: grey; */
     margin: 10%;
 }
 
 #hello {
-    font-size: 50px;
+    font-size: 3vw;
     margin: 0;
     font-family: 'Pacifico', cursive; /* Menggunakan font Pacifico jika tersedia */
 }
@@ -70,10 +73,17 @@ nav {
 }
 
 .lastplay {
-    color: white;
+    /* background-color: red; */
+
+    width: 20%;
+    /* height: 20vh; */
+    margin: 10%;
+}
+.lastplay img{
+    width: 100%;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1660px) {
     body {
         overflow: hidden;
     }
@@ -117,5 +127,8 @@ nav {
 
     .utama {
         flex-direction: column-reverse; /* Mengubah flex direction */
+    }
+    .lastplay{
+        
     }
 }

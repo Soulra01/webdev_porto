@@ -1,5 +1,5 @@
 // Authorization token that must have been created previously. See : https://developer.spotify.com/documentation/web-api/concepts/authorization
-const token = 'BQAFn0RkrlplB3klwEA68RcPO28F4bxULYaO5KbA3LzHD674BUiohYGZKC0LFFBUBu-6j7t6pBl3p2xDAPJOBIvA0K86kod0TksISiGJUBlI-jQIM7o';
+const token = 'BQDQ5tnzxno15v4fxTCYTjF2NcD7j9vD0GNlpHUh0DtdzKwGE_fki62LlzzFjNMue6R32kkYR9V9iZavecp4TRk9qsBNPVKwk0pBFg4iQvYqO5Qa73g';
 async function fetchWebApi(endpoint, method, body) {
   const res = await fetch(`https://api.spotify.com/${endpoint}`, {
     headers: {
@@ -11,17 +11,17 @@ async function fetchWebApi(endpoint, method, body) {
   return await res.json();
 }
 
-async function getTopTracks(){
-  // Endpoint reference : https://developer.spotify.com/documentation/web-api/reference/get-users-top-artists-and-tracks
-  return (await fetchWebApi(
-    'v1/me/top/tracks?time_range=short_term&limit=5', 'GET'
-  )).items;
+async function lastplayed() {
+  return(await fetchWebApi('v1/me/player/recently-played', 'GET')).items[0].track.name;
 }
 
-async function main(){
-  const topTracks = await getTopTracks();
+async function current() {
+  return(await fetchWebApi('v1/me/player/currently-playing', 'GET')).item.name;
+}
+
+async function main() {
   console.log(
-    topTracks?.map(
+    recommendedTracks?.map(
       ({name, artists}) =>
         `${name} by ${artists.map(artist => artist.name).join(', ')}`
     )
@@ -29,11 +29,3 @@ async function main(){
 }
 
 main();
-
-// const topTracks = await getTopTracks();
-// console.log(
-//   topTracks?.map(
-//     ({name, artists}) =>
-//       `${name} by ${artists.map(artist => artist.name).join(', ')}`
-//   )
-// );
