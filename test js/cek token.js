@@ -17,10 +17,7 @@ var authOptions = {
 request.post(authOptions, function(error, response, body) {
   if (!error && response.statusCode === 200) {
     var token = body.access_token;
-    console.log('Access Token:', token);
-
-    // You can use the `token` here for your API requests.
-  } else {
-    console.error('Error obtaining access token:', error);
+    console.log(token);
   }
 });
+
