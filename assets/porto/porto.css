@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:ital@1&display=swap');
 
 body {
-    background-color: black;
+    background-color: #0d0d0d;
     color: white;
     margin: 0;
     padding: 0;
@@ -13,7 +13,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     /* padding: 20px; */
-    background-color: #000000;
+    background-color: #0d0d0d;
     color: white;
 }
 
@@ -46,18 +46,24 @@ nav {
 }
 .card-container{
     display: flex;
-    overflow-y: auto;
+    /* overflow-y: auto; */
     justify-content: center;
     /* background-color: green; */
     padding: 20px;
     /* height: 800px; */
 }
+.card-container a{
+    margin: 2%;
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s; /* Efek transisi warna teks saat hover */
+}
 
 .card{
-    background-color: rgb(68, 68, 68);
+    background-color: #171717;
     width: 400px;
     height: 450px;
-    margin: 3%;
+    margin: 5%;
     border-radius: 10px;
     padding: 20px;
 }
@@ -78,13 +84,13 @@ nav {
 .card:hover{
     /* transform: scale(1.1); */
     transition: 0.5s;
-    background-color: rgb(107, 107, 107);
+    background-color: #1f1f1f;
 }
 
 
 @media (max-width: 1000px) {
     body {
-        /* overflow: hidden; */
+        overflow-y:scroll;
         min-height: 1000px;
 
     }
@@ -96,7 +102,7 @@ nav {
         /* position: absolute; */
         top: 60px;
         left: 0;
-        background-color: #000000;
+        background-color: #0d0d0d;
         width: 100%;
         text-align: center;
         transition: max-height 1s, opacity 1s; /* Efek transisi */

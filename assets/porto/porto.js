@@ -23,4 +23,3 @@ document.addEventListener("click", (e) => {
     });
 });
 
-// Import library spotify-web-api-js
