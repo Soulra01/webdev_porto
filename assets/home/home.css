@@ -59,7 +59,7 @@ nav {
 }
 
 #hello {
-    font-size: 3vw;
+    font-size: 30px;
     margin: 0;
     font-family: 'Pacifico', cursive; /* Menggunakan font Pacifico jika tersedia */
 }
@@ -82,15 +82,44 @@ nav {
 .lastplay img{
     width: 100%;
 }
+.footer{
+    width: 100%;
+    min-height: 150px;
+    background-color: #222021;
+    margin-top: 20px;
+}
+.footer .footer-container{
+    
+}
+.footer-container .row{
+    font-size: 50px;
+    text-align: center;
+    /* display: flex; */
+    /* flex-direction: column; */
+    padding: 10px;
+}
+.row a{
+    text-decoration: none;
+    color: white;
+    margin: 15px;
+}
+
+#please-content{
+    font-size: 25px;
+}
+
+#Copyright-content{
+    font-size: 20px;
+}
 
 @media (max-width: 1000px) {
     body {
-        overflow: hidden;
+        overflow-x: hidden;
     }
 
     .menu {
         max-height: 0;
-        overflow: hidden;
+        /* overflow: hidden; */
         flex-direction: column;
         position: absolute;
         top: 60px;
@@ -101,9 +130,11 @@ nav {
         transition: max-height 1s, opacity 1s; /* Efek transisi */
         opacity: 0;
         padding: 1%;
+        margin-top: -20px;
     }
-
+    
     .menu.active {
+        margin-top: -20px;
         max-height: 200px; /* Atur sesuai dengan tinggi menu sebenarnya */
         opacity: 1;
     }
@@ -128,7 +159,21 @@ nav {
     .utama {
         flex-direction: column-reverse; /* Mengubah flex direction */
     }
+    .flex-item {
+        /* width: 175px; */
+        /*height: 175px; */
+        /* background-color: grey; */
+        /* margin: 10%; */
+        margin: 0;
+    }
     .lastplay{
-        
+        width: 50%;
+        margin: 0;
+    }
+    #please-content{
+        font-size: 18px;
+    }
+    #Copyright-content{
+        font-size: 12px;
     }
 }
