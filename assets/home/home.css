@@ -98,16 +98,29 @@ nav {
     /* flex-direction: column; */
     padding: 10px;
 }
+.row{
+}
 .row a{
+    width: 100px;
+    height: 100px;
     text-decoration: none;
     color: white;
-    margin: 15px;
+    margin: 0 15px;
+    padding: 0 15px;
+    transition: color 1s ease;
+    border-radius: 50%;
+}
+.row a:hover{
+    /* background-color: red; */
+    color: rgb(255, 208, 0);
 }
 
 #please-content{
     font-size: 25px;
 }
-
+#icon-content{
+    padding: 0 15px 0;
+}
 #Copyright-content{
     font-size: 20px;
 }
